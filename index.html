@@ -23,6 +23,18 @@ window.onload = function() {
 }
 </script>
 
+<script>
+    // function fnMove(seq){
+    //     var offset = $("#div" + seq).offset();
+    //     $('html, body').animate({scrollTop : offset.top}, 400);
+    // }
+    // $(scroll).scroll(function(){
+    //
+    // } {
+    //
+    // })
+</script>
+
 </head>
 <body>
 <!-- 상단 네비게이션 바 -->
@@ -47,11 +59,8 @@ window.onload = function() {
       </div>
 </div>
 <body>
-  <!-- <button id="call">클릭!</button> -->
-  <!-- <p id="show"></p> -->
-</body>
-	<div class="container">
-    <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:10px;">
+  <div class="chat-container">
+    <div class="row col-xs-7 col-md-5 center-block" style="float: none; margin: 0 auto;" id="chat_window_1" >
         <div class="col-xs-12 col-md-12">
         	<div class="panel panel-default">
                 <div class="panel-heading top-bar">
@@ -59,10 +68,10 @@ window.onload = function() {
                         <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Cinema-bot</h3>
                     </div>
                 </div>
-                <div class="panel-body msg_container_base">
+                <div class="panel-body msg_container_base" id="scroll">
                   <div class="row msg_container base_receive">
                       <div class="col-md-2 col-xs-2 avatar">
-                          <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                          <img src="image/popcorn.png" class=" img-responsive ">
                       </div>
                       <div class="col-xs-10 col-md-10">
                           <div class="messages msg_receive">
@@ -73,7 +82,7 @@ window.onload = function() {
                   </div>
                   <div class="row msg_container base_receive">
                       <div class="col-md-2 col-xs-2 avatar">
-                          <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                          <img src="image/popcorn.png" class=" img-responsive ">
                       </div>
                       <div class="col-xs-10 col-md-10">
                           <div class="messages msg_receive">
@@ -89,14 +98,19 @@ window.onload = function() {
                     <div class="input-group">
                         <input onkeypress="javascript:if(event.keyCode == 13){alert('!!');}" id="inputText" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
                         <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" id="sendBtn">Send</button>
+                          <!-- <button type="button" >절대값 스크롤 ( 100px )</button> -->
+                        <button class="btn btn-primary btn-sm" id="sendBtn" onclick="$('scroll').stop().animate( { scrollTop : '100' } ); ">Send</button>
                         </span>
                     </div>
                 </div>
     		</div>
         </div>
     </div>
-</div>
+  </div>
+
+  <!-- <button id="call">클릭!</button> -->
+  <!-- <p id="show"></p> -->
+</body>
 
 
 </body>

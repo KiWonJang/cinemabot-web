@@ -12,5 +12,5 @@ var app = http.createServer(function(request,response){
     response.end(fs.readFileSync(__dirname + url));
 
 });
-
+console.log("server is running");
 app.listen(3000);

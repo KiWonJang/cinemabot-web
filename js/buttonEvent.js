@@ -26,7 +26,7 @@ $(function(){
     var nowTime =  now.getHours() + "시" + now.getMinutes() + "분" ;
     return `<div class="row msg_container base_receive">
         <div class="col-md-2 col-xs-2 avatar">
-            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+            <img src="image/popcorn.png" class=" img-responsive ">
         </div>
         <div class="col-xs-10 col-md-10">
             <div class="messages msg_receive">
@@ -39,9 +39,11 @@ $(function(){
   var sList = [];
   var rList = [];
   var temp;
-
+  var h = 0;
 
   $('#sendBtn').click(function(){
+    $('.msg_container_base').scrollTop(320*sList.length);
+    alert($("#scroll").height());
     var msg = $('#inputText').val();
     // list.push(inputText);
     sList.push(sDivMsg(msg));
