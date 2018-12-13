@@ -49,16 +49,12 @@ $(function(){
     $('#show').html(sList);
     $.ajax({
         type : "POST",
-        url : "4.180.98.17:8080/message",
+        url : "http://54.180.98.17:8080/message",
         // crossDomain: true,
         contentType:'application/json',
         // async : false,
         dataType :'json',
-        data : {"user_key":"encryptedUserKey", "type":"text", "content":"안녕하세요~"},
-
-        beforeSend : function(e){
-          // alert(JSON.stringify(e));
-        },
+        data : JSON.stringify({content: msg}),
         success : function(message){
             sList.push(rDivMsg(JSON.stringify(message)));
             $('#show').html(sList);
@@ -67,9 +63,6 @@ $(function(){
             sList.push(rDivMsg(JSON.stringify(e)));
             $('#show').html(sList);
         },
-        complete: function(e) {
-          // alert(JSON.stringify(e));
-        }
     })
 
   })
