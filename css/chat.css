@@ -37,8 +37,8 @@ body{
   background: #e5e5e5;
   margin: 0;
   padding: 0 10px 10px;
-  max-height:700px;
-  height:700px;
+  max-height:570px;
+  height:570px;
   /*max-width: 500px;*/
   overflow-x:hidden;
 }
