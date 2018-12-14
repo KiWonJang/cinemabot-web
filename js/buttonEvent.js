@@ -60,7 +60,7 @@ $(function(){
             s = s.substring(1,s.length-1);
             sList.push(tDivMsg(rDivMsg(s)));
             $('#show').html(sList);
-            $('.msg_container_base').scrollTop(320*sList.length);
+            $('.msg_container_base').scrollTop(1000*sList.length);
         },
         error : function(e){
             sList.push(rDivMsg(JSON.stringify(e)));
