@@ -16,23 +16,11 @@
 
 <script>
 window.onload = function() {
-    var clock = document.getElementById("clock");            // 출력할 장소 선택
-    var now = new Date();                                                  // 현재시간
+    var clock = document.getElementById("clock");
+    var now = new Date();
     var nowTime = now.getHours() + "시" + now.getMinutes() + "분" + now.getSeconds() + "초";
-    clock.innerHTML = nowTime;           // 현재시간을 출력
+    clock.innerHTML = nowTime;
 }
-</script>
-
-<script>
-    // function fnMove(seq){
-    //     var offset = $("#div" + seq).offset();
-    //     $('html, body').animate({scrollTop : offset.top}, 400);
-    // }
-    // $(scroll).scroll(function(){
-    //
-    // } {
-    //
-    // })
 </script>
 
 </head>
@@ -42,25 +30,13 @@ window.onload = function() {
       <div class="container">
         <div class="navbar-header">
           <!-- 브라우저가 좁아졋을때 나오는 버튼(클릭시 메뉴출력) -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">부트스트랩 테스트</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">홈으로</a></li>
-            <li><a href="#about">부트스트랩이란</a></li>
-            <li><a href="#contact">문의하기</a></li>
-          </ul>
+          <a class="navbar-brand" href="#">시네마봇</a>
         </div>
       </div>
 </div>
 <body>
   <div class="chat-container">
-    <div class="row col-xs-7 col-md-5 center-block" style="float: none; margin: 0 auto;" id="chat_window_1" >
+    <div class="row col-md-5 center-block" style="float: none; margin: 0 auto;" id="chat_window_1" >
         <div class="col-xs-12 col-md-12">
         	<div class="panel panel-default">
                 <div class="panel-heading top-bar">
@@ -69,26 +45,23 @@ window.onload = function() {
                     </div>
                 </div>
                 <div class="panel-body msg_container_base" id="scroll">
-                  <div class="row msg_container base_receive">
+                  <div class="row msg_container base_receive" id="block">
                       <div class="col-md-2 col-xs-2 avatar">
                           <img src="image/popcorn.png" class=" img-responsive ">
                       </div>
-                      <div class="col-xs-10 col-md-10">
+                      <div class="col-xs-10 col-md-10 message-inner-r" >
                           <div class="messages msg_receive">
-                              <p>안녕하세요!</p>
+                              <p>안녕하세요! <br>
+                                영화 상영시간표를 보여주는 Cinema-bot입니다!<br>
+                                영화는 오늘, 내일의 영화를 보여드립니다.<br>
+                                명령어를 입력하시면 영화관의 상영시간표를 보여드릴게요.<br>
+                                <br>
+                                명령어 예시<br>
+                                수원 CGV 상영시간표 보여줘<br>
+                                동탄 13시 영화 보여줘<br>
+
+                                </p>
                               <time datetime="2009-11-13T20:00" id="clock"></time>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row msg_container base_receive">
-                      <div class="col-md-2 col-xs-2 avatar">
-                          <img src="image/popcorn.png" class=" img-responsive ">
-                      </div>
-                      <div class="col-xs-10 col-md-10">
-                          <div class="messages msg_receive">
-                              <p id="component">안녕하세요!</p>
-                              <time datetime="2009-11-13T20:00"
-                              ></time>
                           </div>
                       </div>
                   </div>
@@ -96,10 +69,9 @@ window.onload = function() {
                 </div>
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input onkeypress="javascript:if(event.keyCode == 13){alert('!!');}" id="inputText" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                        <input style="ime-mode:active;" onkeypress="javascript:if(event.keyCode == 13){$('#sendBtn').trigger('click');}" id="inputText" type="text" class="form-control input-sm chat_input" placeholder="명령어를 입력해주세요." />
                         <span class="input-group-btn">
-                          <!-- <button type="button" >절대값 스크롤 ( 100px )</button> -->
-                        <button class="btn btn-primary btn-sm" id="sendBtn" onclick="$('scroll').stop().animate( { scrollTop : '100' } ); ">Send</button>
+                        <button class="btn btn-primary btn-sm" id="sendBtn" style="height:40px;">Send</button>
                         </span>
                     </div>
                 </div>
@@ -107,9 +79,6 @@ window.onload = function() {
         </div>
     </div>
   </div>
-
-  <!-- <button id="call">클릭!</button> -->
-  <!-- <p id="show"></p> -->
 </body>
 
 
